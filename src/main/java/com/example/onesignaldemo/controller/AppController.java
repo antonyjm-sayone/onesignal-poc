@@ -11,13 +11,4 @@ public class AppController {
         return "second.html";
     }
 
-    @GetMapping("/OneSignalSDKWorker.js")
-    public String getOneSignalSDKWorker(){
-        return "OneSignalSDKWorker.js";
-    }
-
-    @GetMapping("/OneSignalSDKUpdaterWorker.js")
-    public String getOneSignalUpdater(){
-        return "OneSignalSDKUpdaterWorker.js";
-    }
 }
