@@ -1,6 +1,15 @@
 <html>
     <head>
         <title>Browser Notification</title>
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+        <script>
+          window.OneSignal = window.OneSignal || [];
+          OneSignal.push(function() {
+            OneSignal.init({
+              appId: "afd85f19-fa3a-4ced-a81d-dc715e62cd03",
+            });
+          });
+        </script>
     </head>
     <body>
      <h1>Second Page</h1>

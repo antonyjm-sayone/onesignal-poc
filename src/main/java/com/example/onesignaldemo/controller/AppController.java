@@ -10,4 +10,14 @@ public class AppController {
     public String getChat(){
         return "second.html";
     }
+
+    @GetMapping("/OneSignalSDKWorker.js")
+    public String getOneSignalSDKWorker(){
+        return "OneSignalSDKWorker.js";
+    }
+
+    @GetMapping("/OneSignalSDKUpdaterWorker.js")
+    public String getOneSignalUpdater(){
+        return "OneSignalSDKUpdaterWorker.js";
+    }
 }
