@@ -1,5 +1,7 @@
 package com.example.onesignaldemo.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,9 +20,10 @@ public class ApiController {
     public static final String APP_ID = "afd85f19-fa3a-4ced-a81d-dc715e62cd03";
 
     @PostMapping("/send")
-    public void sendMessageToAllUsersApi(@RequestBody MessageParams message)
+    public ResponseEntity sendMessageToAllUsersApi(@RequestBody MessageParams message)
     {
         sendMessageToAllUsers(message.getMessage());
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     public static void sendMessageToAllUsers(String message) {
