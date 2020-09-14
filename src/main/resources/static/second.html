@@ -8,6 +8,9 @@
             OneSignal.init({
               appId: "afd85f19-fa3a-4ced-a81d-dc715e62cd03",
             });
+            OneSignal.on('notificationDisplay', function(event) {
+                console.warn('OneSignal notification displayed:', event);
+              });
           });
         </script>
     </head>
@@ -18,7 +21,25 @@
      </div>
     <div>
         <input type="text" id="txt-input">
+        <button onclick="sendText()">Send</button>
     </div>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+     <script type="text/javascript">
+         function sendText(){
+            $.ajax({
+                url:'http://localhost:8080/send',
+                method:'POST',
+                contentType : 'application/json',
+                data: JSON.stringify({ 'message': $("#txt-input").val() }),
+                success : function(data, textStatus, jqXHR){
+                      console.log('success')
+
+                   },
+               error : function(jqXHR, textStatus, errorThrown){
+                     console.log('failure')
+               }
+            });
+         }
+     </script>
     </body>
 </html>
