@@ -27,7 +27,7 @@
      <script type="text/javascript">
          function sendText(){
             $.ajax({
-                url:'http://localhost:8080/send',
+                url:'https://li2031-221.members.linode.com/send',
                 method:'POST',
                 contentType : 'application/json',
                 data: JSON.stringify({ 'message': $("#txt-input").val() }),
